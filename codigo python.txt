@@ -1,0 +1,200 @@
+print("¡Hola, Mundo!")
+nombre = "Ana"
+edad = 25
+print(f"{nombre} tiene {edad} años.")
+******************
+¡Hola Mundo!
+Ana tiene 25 años.
+--------------------
+
+a = 10
+b = 3
+
+suma = a + b       # 13
+resta = a - b      # 7
+multiplicacion = a * b  # 30
+division = a / b   # 3.333... (float)
+division_entera = a // b  # 3 (int)
+modulo = a % b     # 1 (resto de la división)
+potencia = a ** b  # 1000 (10 elevado a 3)
+
+print(f"División: {division}, Módulo: {modulo}")
+*************
+Operadores aritméticos (+, -, *, /, //, %, **).
+
+Diferencia entre división normal (/) y entera (//).
+
+ Condicionales (if, elif, else)
+edad = 18
+
+if edad < 12:
+    print("Niño")
+elif 12 <= edad < 18:
+    print("Adolescente")
+else:
+    print("Adulto")
+
+Estructuras de control (if, elif, else).
+
+Operadores de comparación (<, <=, >, >=, ==).
+
+Bucles (for, while)
+frutas = ["manzana", "banana", "naranja"]
+
+for fruta in frutas:
+    print(f"Me gusta la {fruta}")
+
+# Con índice:
+for i, fruta in enumerate(frutas):
+    print(f"Fruta {i + 1}: {fruta}")
+
+
+contador = 0
+
+while contador < 5:
+    print(f"Contador: {contador}")
+    contador += 1  # Incrementar el contador (evitar bucle infinito)
+Listas (arrays)
+python
+numeros = [1, 2, 3, 4, 5]
+numeros.append(6)        # Añadir elemento: [1, 2, 3, 4, 5, 6]
+ultimo = numeros.pop()   # Eliminar y obtener el último elemento (6)
+
+# Sublistas (slicing)
+primeros_tres = numeros[:3]  # [1, 2, 3]
+
+/////////////
+persona = {
+    "nombre": "Carlos",
+    "edad": 30,
+    "ciudad": "Madrid"
+}
+
+print(persona["nombre"])  # Acceder por clave: "Carlos"
+persona["profesion"] = "Ingeniero"  # Añadir nueva clave
+----------------
+
+funciones
+def saludar(nombre, mensaje="Hola"):
+    return f"{mensaje}, {nombre}!"
+
+print(saludar("Luisa"))              # "Hola, Luisa!"
+print(saludar("Pedro", "Buen día"))  # "Buen día, Pedro!"
+**********
+
+
+1. Opción rápida: Flask (Microframework)
+Ideal para APIs y webs simples.
+
+Paso 1: Instalar Flask
+pip install flask
+Paso 2: Crear un archivo app.py
+from flask import Flask, render_template
+
+app = Flask(__name__)
+
+@app.route("/")  # Ruta principal
+def home():
+    return "<h1>¡Hola Mundo desde Flask!</h1>"
+
+@app.route("/about")  # Otra ruta
+def about():
+    return render_template("about.html")  # Usando plantillas HTML
+
+if __name__ == "__main__":
+    app.run(debug=True)  # Ejecuta el servidor local
+Paso 3: Crear plantillas HTML (opcional)
+Crea una carpeta llamada templates y dentro un archivo about.html:
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sobre mí</title>
+</head>
+<body>
+    <h1>Página About</h1>
+    <p>Creada con Flask y Python.</p>
+</body>
+</html>
+Paso 4: Ejecutar la app
+python app.py
+Abre http://localhost:5000 en tu navegador.
+
+Verás el mensaje "¡Hola Mundo desde Flask!".
+
+En http://localhost:5000/about cargará about.html.
+
+
+Opción completa: Django (Framework Full-Stack)
+Perfecto para aplicaciones web complejas (como un blog o e-commerce).
+
+Paso 1: Instalar Django
+pip install django
+Paso 2: Crear un proyecto
+django-admin startproject miweb  # Crea el proyecto
+cd miweb
+python manage.py startapp blog   # Crea una app (ej: blog)
+Paso 3: Definir una vista y URL
+En blog/views.py:
+
+from django.http import HttpResponse
+
+def home(request):
+    return HttpResponse("<h1>Bienvenido a mi Blog</h1>")
+
+En miweb/urls.py:
+from django.contrib import admin
+from django.urls import path
+from blog.views import home  # Importa la vista
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', home),  # Ruta principal
+]
+Paso 4: Ejecutar el servidor
+python manage.py runserver
+Abre http://localhost:8000 y verás el mensaje del blog.
+
+ Subir tu web a Internet (Deploy)
+Vercel / Netlify: Para proyectos estáticos (HTML + JS).
+
+Render / Railway: Para Flask/Django (necesitan configuración).
+
+Heroku: Opción clásica (requiere Git).
+Ejemplo para Flask en Render:
+
+Crea un archivo requirements.txt con las dependencias:
+flask
+gunicorn
+Sigue la documentación de Render para conectar tu repositorio de GitHub.
+4. Ejemplo Avanzado: Flask + Base de Datos (SQLite)
+from flask import Flask, render_template
+import sqlite3
+
+app = Flask(__name__)
+
+@app.route("/usuarios")
+def usuarios():
+    conn = sqlite3.connect("database.db")
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM usuarios")
+    usuarios = cursor.fetchall()  # Obtiene todos los registros
+    return render_template("usuarios.html", usuarios=usuarios)
+¿Cuál elegir?
+Flask	Django
+Microframework (flexible)	Framework completo (baterías incluidas)
+Ideal para APIs y proyectos pequeños	Perfecto para apps grandes (admin, ORM, seguridad)
+Más control sobre componentes	Menos configuración inicial
+
+
+Siguientes pasos
+Aprende HTML/CSS: Para diseñar las plantillas.
+
+Integra una base de datos: SQLite (simple) o PostgreSQL (avanzado).
+
+Explora Django REST Framework: Si quieres hacer una API.
+
+En Git, existen varios conceptos y comandos clave que te permiten gestionar tu código de manera efectiva. Algunos de estos conceptos incluyen los estados de los archivos (confirmado, modificado, preparado), los tipos de repositorios (locales y remotos), los comandos de Git como git add, git commit, git branch y git merge, entre otros, según Atlassian. Además, existen diferentes flujos de trabajo de Git, como el flujo de trabajo centralizado, el flujo de trabajo de rama de función y el flujo de trabajo de Gitflow, dice buddy.works. 
+
+
+
