@@ -1,3 +1,21 @@
+14/05/2025 probando cambios 
+Ejemplo Integrado: Calculadora Simple
+def calculadora(a, b, operacion):
+    if operacion == "+":
+        return a + b
+    elif operacion == "-":
+        return a - b
+    elif operacion == "*":
+        return a * b
+    elif operacion == "/":
+        return a / b
+    else:
+        return "Operación no válida"
+
+print(calculadora(5, 3, "*"))  # 15
+
+
+********************
 print("¡Hola, Mundo!")
 nombre = "Ana"
 edad = 25
