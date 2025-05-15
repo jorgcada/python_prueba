@@ -1,3 +1,17 @@
+"Método","Introducido en","Ventajas","Desventajas"
+"cuerdas f","Python 3.6.","Más legible, rápido, permite expresiones complejas directamente","Solo disponible en Python 3.6 o superior"
+".format ()","Python 2.6","Flexible, compatible con versiones antiguas, permite nombres e índices","Más verboso que las f-strings"
+"Operador %","Python 1.x","Simple para formatos básicos, compatible con todas las versiones","Menos legible, limitado para formatos complejos"
+"Concatenación","Python 1.x","Muy simple para casos básicos","Ineficiente, propenso a errores con tipos"
+"Trigas de plantilla","Python 1.x","Seguro contra la inyección de código, para la utilidad entradas de usuario","Menos flexible, requiere importar módulo"
+
+Recomendación:
+
+    Usa f-strings siempre que sea posible (si estás en Python 3.6 o superior, como en tu caso con Python 3.13). Son el método más moderno, legible y eficiente.
+    Si necesitas compatibilidad con versiones muy antiguas (por ejemplo, Python 2.x), usa .format() o el operador %.
+    Evita la concatenación con . para formateo complejo, ya que puede serinficiente y difícil de mantener.
+
+
 print("¡Hola, Mundo!")
 nombre = "Ana"
 edad = 25
