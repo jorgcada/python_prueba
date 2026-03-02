@@ -1,3 +1,16 @@
+MaperManagerData -> Api -> Controllers.
+EmailController.cs
+[Route("api/maper/[controller]")]
+Asegúrate de que esté seleccionada la opción "Commit directly to the main branch" (o la rama que use Jenkins).
+Presiona el botón verde "Commit changes".
+ Jenkins
+Abre tu panel de Jenkins.
+Busca el Job (proyecto) que compila el Backend.
+Haz clic en "Build Now"
+Espera a que el círculo se ponga en verde (terminado).
+
+
+
 "Método","Introducido en","Ventajas","Desventajas"
 "cuerdas f","Python 3.6.","Más legible, rápido, permite expresiones complejas directamente","Solo disponible en Python 3.6 o superior"
 ".format ()","Python 2.6","Flexible, compatible con versiones antiguas, permite nombres e índices","Más verboso que las f-strings"
@@ -209,6 +222,7 @@ Integra una base de datos: SQLite (simple) o PostgreSQL (avanzado).
 Explora Django REST Framework: Si quieres hacer una API.
 
 En Git, existen varios conceptos y comandos clave que te permiten gestionar tu código de manera efectiva. Algunos de estos conceptos incluyen los estados de los archivos (confirmado, modificado, preparado), los tipos de repositorios (locales y remotos), los comandos de Git como git add, git commit, git branch y git merge, entre otros, según Atlassian. Además, existen diferentes flujos de trabajo de Git, como el flujo de trabajo centralizado, el flujo de trabajo de rama de función y el flujo de trabajo de Gitflow, dice buddy.works. 
+
 
 
 
